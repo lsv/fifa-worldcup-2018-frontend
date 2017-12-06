@@ -1,0 +1,11 @@
+{%- for key, phase in phases -%}
+    {%- if loop.index == 1 -%}
+        <div class="knockoutmatches row mb-4 mt-4 justify-content-around align-items-center">
+    {%- endif -%}
+    {%- if loop.index == 4 -%}
+        </div><div class="knockoutmatches row mb-4 mt-4 justify-content-around align-items-center">
+    {%- endif -%}
+
+    {%- include 'overview/knockout/phase.html.twig' with {key: key, phase: phase} only -%}
+{%- endfor -%}
+</div>

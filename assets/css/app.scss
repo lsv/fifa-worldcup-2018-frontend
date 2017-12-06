@@ -1,0 +1,114 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  background: #a6a2a3;
+}
+
+table {
+  @extend .table;
+}
+
+td {
+  @extend .align-middle;
+}
+
+.card--group {
+  table {
+    @extend .table-vsm;
+  }
+  button {
+    @extend .p-2;
+    @extend .close;
+    @extend .btn-block;
+    font-size: 0.9rem;
+  }
+}
+
+.card--knockoutmatches {
+  min-width: 40rem;
+}
+
+.team--name {
+  white-space: nowrap;
+  cursor: pointer;
+  &--hover {
+    font-weight: bold;
+  }
+}
+
+.groupmatches {
+  @extend .row;
+  @extend .mb-4;
+  @extend .mt-4;
+  @extend .justify-content-around;
+}
+
+.table-groupmatches,
+.table-knockoutmatches {
+  &--result {
+    margin: 5px;
+    width: 2rem;
+    text-align: center;
+    border-radius: 0;
+    @extend .form-control;
+    @extend .form-control-sm;
+  }
+  &--spacer {
+    cursor: help;
+  }
+  &--label {
+    margin-bottom: 0;
+  }
+  &--finished {
+    background-color: $gray-lighter;
+  }
+  &--winner {
+    background-color: $state-success-bg;
+  }
+  &--loser {
+    background-color: $state-danger-bg;
+  }
+  &--draw {
+    background-color: $state-info-bg;
+  }
+  &--hometeam {
+    white-space: nowrap;
+  }
+  &--awayteam {
+    white-space: nowrap;
+  }
+}
+
+.table-vsm td, .table-vsm th {
+  padding: 0.2rem;
+  font-size: 0.8rem;
+}
+
+.card > table {
+  margin-bottom: 0;
+}
+
+.card-footer table {
+  margin-bottom: 0;
+}
+
+.table-noborder td {
+  border-top: 0;
+}
+
+.close {
+  cursor: pointer;
+  &--close {
+    transform: rotate(0deg);
+    transition: all 0.5s;
+    float: none;
+  }
+  &--plus {
+    transform: rotate(-45deg);
+    transition: all 0.5s;
+    float: none;
+  }
+  &:focus {
+    outline: none;
+  }
+}

@@ -1,0 +1,19 @@
+<div class="card card--knockoutmatches card--{{ key }}">
+    <div class="card-header">
+        {% if key == 'round_2_loser' %}
+            <img src="{{ asset('icons/bronze-medal.svg') }}" style="height: 25px" alt="">
+        {% endif %}
+        {% if key == 'round_2' %}
+            <img src="{{ asset('icons/gold-medal.svg') }}" style="height: 25px" alt="">
+            <img src="{{ asset('icons/silver-medal.svg') }}" style="height: 25px" alt="">
+        {% endif %}
+        {{ phase.name }}
+    </div>
+    <table class="table table-vsm table-knockoutmatches">
+        <tbody>
+            {% for match in phase.matches %}
+                {% include 'overview/match/index.html.twig' with {type: 'knockoutmatches', match: match} %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

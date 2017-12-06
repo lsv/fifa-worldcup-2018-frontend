@@ -1,0 +1,24 @@
+{%- if match.isFinished -%}
+    {% if match.homeresult > match.awayresult %}
+        {% set homeclass = 'table-' ~ type ~ '--winner' %}
+        {% set awayclass = 'table-' ~ type ~ '--loser' %}
+    {% elseif match.awayresult > match.homeresult %}
+        {% set homeclass = 'table-' ~ type ~ '--loser' %}
+        {% set awayclass = 'table-' ~ type ~ '--winner' %}
+    {% else %}
+        {% set homeclass = 'table-' ~ type ~ '--draw' %}
+        {% set awayclass = 'table-' ~ type ~ '--draw' %}
+    {% endif %}
+{%- endif -%}
+<tr class="{{ match.isFinished ? 'table-' ~ type ~ '--finished' : '' }}" id="match_{{ match.id }}">
+    <td class="table-{{ type }}--date text-center moment-date" title="{{ match.date|date('Y-m-d H:i T (P)') }}" data-date="{{ match.date|date('c') }}"></td>
+    <td class="{{ homeclass|default('') }} table-{{ type }}--hometeam text-right">
+        {%- include '_partial/teamname.html.twig' with {team: match.hometeam} only -%}
+        <label class="table-{{ type }}--label"><input name="m{{ match.id }}h" type="text" class="table-{{ type }}--result" value="{{ match.homeresult }}"></label>
+    </td>
+    <td class="table-{{ type }}--spacer text-center" title="{{ match.stadium.name }}"><small>{{ 'Match %id%'|trans({'%id%': match.id}) }}</small></td>
+    <td class="{{ awayclass|default('') }} table-{{ type }}--awayteam">
+        <label class="table-{{ type }}--label"><input name="m{{ match.id }}a" type="text" class="table-{{ type }}--result" value="{{ match.awayresult }}"></label>
+        {%- include '_partial/teamname.html.twig' with {team: match.awayteam} only -%}
+    </td>
+</tr>

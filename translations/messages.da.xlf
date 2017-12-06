@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="da" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="SC2nyFo" resname="Group %name%">
+        <source>Group %name%</source>
+        <target>Gruppe %name%</target>
+      </trans-unit>
+      <trans-unit id="kAseTEa" resname="Played">
+        <source>Played</source>
+        <target>Spillet</target>
+      </trans-unit>
+      <trans-unit id="3uoA6X3" resname="Pld">
+        <source>Pld</source>
+        <target>K</target>
+      </trans-unit>
+      <trans-unit id="QdqLcp." resname="Wins">
+        <source>Wins</source>
+        <target>Vundet</target>
+      </trans-unit>
+      <trans-unit id=".LX0Dfm" resname="W">
+        <source>W</source>
+        <target>V</target>
+      </trans-unit>
+      <trans-unit id="4LOipdd" resname="Draws">
+        <source>Draws</source>
+        <target>Uafgjorte</target>
+      </trans-unit>
+      <trans-unit id="PznVw0j" resname="D">
+        <source>D</source>
+        <target>U</target>
+      </trans-unit>
+      <trans-unit id="UeE1feh" resname="Lost">
+        <source>Lost</source>
+        <target>Tabte</target>
+      </trans-unit>
+      <trans-unit id="ct.PsMR" resname="L">
+        <source>L</source>
+        <target>T</target>
+      </trans-unit>
+      <trans-unit id="s5VXio0" resname="Goals for">
+        <source>Goals for</source>
+        <target>Mål scoret</target>
+      </trans-unit>
+      <trans-unit id="bt5srEX" resname="GF">
+        <source>GF</source>
+        <target>MF</target>
+      </trans-unit>
+      <trans-unit id="xPGfI_M" resname="Goals against">
+        <source>Goals against</source>
+        <target>Mål imod</target>
+      </trans-unit>
+      <trans-unit id="D7wmSF4" resname="GA">
+        <source>GA</source>
+        <target>MI</target>
+      </trans-unit>
+      <trans-unit id="AXn1zbz" resname="Goal difference">
+        <source>Goal difference</source>
+        <target>Mål forskel</target>
+      </trans-unit>
+      <trans-unit id="iE1b.3n" resname="GD">
+        <source>GD</source>
+        <target>MD</target>
+      </trans-unit>
+      <trans-unit id="d96r4jj" resname="Points">
+        <source>Points</source>
+        <target>Point</target>
+      </trans-unit>
+      <trans-unit id="Uu4ZI_l" resname="Pts">
+        <source>Pts</source>
+        <target>P</target>
+      </trans-unit>
+      <trans-unit id="b2.wNym" resname="Winner of group %group%">
+        <source>Winner of group %group%</source>
+        <target>Vinder af gruppe %group%</target>
+      </trans-unit>
+      <trans-unit id="VNljVUx" resname="Runner up group %group%">
+        <source>Runner up group %group%</source>
+        <target>2'er i gruppe %group%</target>
+      </trans-unit>
+      <trans-unit id="G0MHynm" resname="Winner of match %match%">
+        <source>Winner of match %match%</source>
+        <target>Vinder af kamp %match%</target>
+      </trans-unit>
+      <trans-unit id="zenipRr" resname="Loser of match %match%">
+        <source>Loser of match %match%</source>
+        <target>Taber af kamp %match%</target>
+      </trans-unit>
+      <trans-unit id="f1WlFjC" resname="Match %id%">
+        <source>Match %id%</source>
+        <target>Kamp %id%</target>
+      </trans-unit>
+      <trans-unit id="EWzTmCq" resname="Goals">
+        <source>Goals</source>
+        <target>Mål for - Mål imod</target>
+      </trans-unit>
+      <trans-unit id="Mz4KHie" resname="G">
+        <source>G</source>
+        <target>Mål</target>
+      </trans-unit>
+      <trans-unit id="K2pHG.t" resname="Play FIFA Worldcup 2018">
+        <source>Play FIFA Worldcup 2018</source>
+        <target>Spil FIFA Worldcup 2018</target>
+      </trans-unit>
+      <trans-unit id="TOyh1Sz" resname="Timezone">
+        <source>Timezone</source>
+        <target>Tidszone</target>
+      </trans-unit>
+      <trans-unit id=".Ae8Dvs" resname="Update your matches, with your results">
+        <source>Update your matches, with your results</source>
+        <target>Opdater resultater på kampene</target>
+      </trans-unit>
+      <trans-unit id="england" resname="England">
+        <source>England</source>
+        <target>England</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

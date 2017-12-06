@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{%- block body -%}
+<form method="get">
+    <div class="row">
+        <h1 class="col">{{ 'Play FIFA Worldcup 2018'|trans }}</h1>
+        <div class="col text-right">
+            <label for="tz">
+                {{ 'Timezone'|trans }}
+                <select class="form-control form-control-sm mb-2 mr-sm-2 mb-sm-0" id="tz" name="tz">
+                    {% for region, zones in timezones() %}
+                        <optgroup label="{{ region }}">
+                            {% for key, zone in zones %}
+                                <option {% if selectedtimezone(app.request) == key %}selected{% endif %} value="{{ key }}">{{ zone }}</option>
+                            {% endfor %}
+                        </optgroup>
+                    {% endfor %}
+                </select>
+            </label>
+        </div>
+    </div>
+
+    {%- include 'overview/groups/index.html.twig' with {groups: data.groups} -%}
+    {%- include 'overview/knockout/index.html.twig' with {phases: data.knockouts} -%}
+    <div class="text-center"><button type="submit" class="btn btn-lg btn-primary">{{ 'Update your matches, with your results'|trans }}</button></div>
+</form>
+{%- endblock -%}
