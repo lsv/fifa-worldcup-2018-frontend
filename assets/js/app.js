@@ -1,5 +1,9 @@
 import moment from 'moment';
 
+moment.relativeTimeThreshold('m', 60);
+moment.relativeTimeThreshold('d', 3000);
+moment.relativeTimeThreshold('h', 24);
+
 $('.moment-date').each(function() {
     let $this = $(this);
     $this.html(moment($this.data('date')).fromNow());
