@@ -1,3 +1,6 @@
+parameters:
+    languages: en|da
+
 services:
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.
@@ -13,3 +16,7 @@ services:
     App\Controller\:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
+
+    App\Twig\AppExtension:
+        $languages: '%languages%'
+        $defaultLanguage: '%kernel.default_locale%'

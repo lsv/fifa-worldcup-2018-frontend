@@ -6,9 +6,10 @@
             <tr>
                 <th scope="col">&nbsp;</th>
                 <th scope="col" class="text-center"><abbr title="{{ 'Played'|trans }}">{{ 'Pld'|trans }}</abbr></th>
-                <th scope="col" class="text-center"><abbr title="{{ 'Wins'|trans }}">{{ 'W'|trans }}</abbr></th>
-                <th scope="col" class="text-center"><abbr title="{{ 'Draws'|trans }}">{{ 'D'|trans }}</abbr></th>
-                <th scope="col" class="text-center"><abbr title="{{ 'Lost'|trans }}">{{ 'L'|trans }}</abbr></th>
+                <th scope="col" class="hidden-lg-up text-center"><abbr title="{{ 'Wins - Draws - Lost'|trans }}">{{ 'W-D-L'|trans }}</abbr></th>
+                <th scope="col" class="hidden-md-down text-center"><abbr title="{{ 'Wins'|trans }}">{{ 'W'|trans }}</abbr></th>
+                <th scope="col" class="hidden-md-down text-center"><abbr title="{{ 'Draws'|trans }}">{{ 'D'|trans }}</abbr></th>
+                <th scope="col" class="hidden-md-down text-center"><abbr title="{{ 'Lost'|trans }}">{{ 'L'|trans }}</abbr></th>
                 <th scope="col" class="text-center"><abbr title="{{ 'Goals'|trans }}">{{ 'G'|trans }}</abbr></th>
                 <th scope="col" class="text-center"><abbr title="{{ 'Goal difference'|trans }}">{{ 'GD'|trans }}</abbr></th>
                 <th scope="col" class="text-center"><abbr title="{{ 'Points'|trans }}">{{ 'Pts'|trans }}</abbr></th>
@@ -21,10 +22,11 @@
                 <tr id="{{ id }}" class="{{ class }}">
                     <td>{%- include '_partial/teamname.html.twig' with {team: standing.team} only -%}</td>
                     <td class="text-center">{{ standing.played }}</td>
-                    <td class="text-center">{{ standing.wins }}</td>
-                    <td class="text-center">{{ standing.draws }}</td>
-                    <td class="text-center">{{ standing.losts }}</td>
-                    <td class="text-center">{{ standing.goalsfor }} - {{ standing.goalsagainst }}</td>
+                    <td class="hidden-lg-up text-center text-nowrap">{{ standing.wins }} - {{ standing.draws }} - {{ standing.losts }}</td>
+                    <td class="hidden-md-down text-center">{{ standing.wins }}</td>
+                    <td class="hidden-md-down text-center">{{ standing.draws }}</td>
+                    <td class="hidden-md-down text-center">{{ standing.losts }}</td>
+                    <td class="text-center text-nowrap">{{ standing.goalsfor }} - {{ standing.goalsagainst }}</td>
                     <td class="text-center">{{ standing.goalsdifference }}</td>
                     <td class="text-center">{{ standing.points }}</td>
                 </tr>
@@ -32,7 +34,7 @@
             </tbody>
         </table>
         <div class="card-footer p-0">
-            <button type="button" class="close close--plus">&times;</button>
+            <button type="button" class="close close--plus"><span>&times;</span></button>
 
             <div style="display: none">
                 <table class="table-groupmatches">

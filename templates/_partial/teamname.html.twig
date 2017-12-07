@@ -1,5 +1,9 @@
 {%- if team.id is defined -%}
-    <span data-id="{{ team.id }}" class="team--name"><i class="flag-icon flag-icon-{{ team.iso2 }}"></i> {{ team.iso2|country(app.request.getLocale()) }}</span>
+    <span data-id="{{ team.id }}" class="team--name">
+        <i class="fa fa-info teammatches"></i>
+        <i class="hidden-xs-down flag-icon flag-icon-{{ team.iso2 }}"></i>
+        <span>{{ team.iso2|country(app.request.getLocale()) }} </span>
+    </span>
 {%- else -%}
     <span>{{ team }}</span>
 {%- endif -%}

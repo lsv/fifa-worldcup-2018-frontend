@@ -12,35 +12,85 @@ td {
   @extend .align-middle;
 }
 
-.card--group {
-  table {
-    @extend .table-vsm;
-  }
-  button {
-    @extend .p-2;
-    @extend .close;
-    @extend .btn-block;
-    font-size: 0.9rem;
-  }
+footer {
+  @extend .mt-4;
 }
 
-.card--knockoutmatches {
-  min-width: 40rem;
+.table-vsm td, .table-vsm th {
+  padding: 0.2rem;
+  font-size: 0.8rem;
+}
+
+.table-noborder td {
+  border-top: 0;
 }
 
 .team--name {
   white-space: nowrap;
-  cursor: pointer;
+  > i.teammatches {
+    cursor: pointer;
+  }
+  > span {
+    cursor: pointer;
+  }
   &--hover {
-    font-weight: bold;
+    > span {
+      font-weight: bold;
+    }
   }
 }
 
 .groupmatches {
   @extend .row;
   @extend .mb-4;
-  @extend .mt-4;
   @extend .justify-content-around;
+  & .card--group {
+    @extend .mb-4;
+    table {
+      @extend .table-vsm;
+    }
+    button {
+      @extend .p-2;
+      @extend .close;
+      @extend .btn-block;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.knockoutmatches {
+  @extend .row;
+  @extend .justify-content-around;
+  @extend .align-items-center;
+  & .card {
+    min-width: 40rem;
+    @extend .mb-4;
+    @include media-breakpoint-down(md) {
+      min-width: 100%;
+    }
+    &--round_12 {
+      @extend .text-white;
+      @extend .bg-primary;
+    }
+  }
+}
+
+.card--round_2 {
+  @extend .text-white;
+  @extend .bg-primary;
+  & > .card-header {
+    @extend .text-white;
+    @extend .bg-primary;
+  }
+}
+
+.card--round_2_loser {
+  @extend .text-white;
+  @extend .bg-info;
+  & > .card-header {
+    @extend .text-white;
+    @extend .bg-info;
+  }
 }
 
 .table-groupmatches,
@@ -78,37 +128,38 @@ td {
     white-space: nowrap;
   }
 }
-
-.table-vsm td, .table-vsm th {
-  padding: 0.2rem;
-  font-size: 0.8rem;
+.table-groupmatches {
+  i.teammatches {display: none;}
 }
 
-.card > table {
-  margin-bottom: 0;
-}
-
-.card-footer table {
-  margin-bottom: 0;
-}
-
-.table-noborder td {
-  border-top: 0;
+.card {
+  & > table {
+    margin-bottom: 0;
+  }
+  &-footer table {
+    margin-bottom: 0;
+  }
 }
 
 .close {
   cursor: pointer;
-  &--close {
+  &--close span {
     transform: rotate(0deg);
     transition: all 0.5s;
-    float: none;
+    display: inline-block;
   }
-  &--plus {
+  &--plus span {
     transform: rotate(-45deg);
     transition: all 0.5s;
-    float: none;
+    display: inline-block;
   }
   &:focus {
     outline: none;
+  }
+}
+
+#teammatchesModal {
+  & .teammatches {
+    display: none;
   }
 }

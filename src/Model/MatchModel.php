@@ -156,6 +156,14 @@ class MatchModel
     }
 
     /**
+     * @return bool
+     */
+    public function isStarted(): bool
+    {
+        return $this->getDate() < new \DateTime();
+    }
+
+    /**
      * @return mixed TeamModel if the winner is decided, null if the match has not completed, false if its equal
      */
     public function getWinner()

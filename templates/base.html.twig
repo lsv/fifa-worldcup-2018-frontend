@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>{{ 'Play FIFA Worldcup 2018'|trans }}</title>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.9.0/css/flag-icon.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('build/css/app.css') }}">
         {% block styles %}
         {% endblock %}
@@ -12,10 +13,11 @@
         <main class="container-fluid">
             {% block body %}{% endblock %}
         </main>
-        <script src="{{ asset('build/js/app.js') }}"></script>
+        <footer></footer>
         <script>
-            moment.locale('{{ app.request.getLocale() }}');
+            var locale = '{{ app.request.getLocale() }}';
         </script>
+        <script src="{{ asset('build/js/app.js') }}"></script>
         {% block scripts %}{% endblock %}
     </body>
 </html>

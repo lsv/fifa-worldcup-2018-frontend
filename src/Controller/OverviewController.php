@@ -3,8 +3,10 @@
 namespace App\Controller;
 
 use App\Parser\DataParser;
+use App\Parser\FindTeamMatchesParser;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -12,7 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
  * Class OverviewController
  * @package App\Controller
  *
- * @Route("/{_locale}", defaults={"_locale": null})
+ * @Route("/")
  */
 class OverviewController extends Controller
 {
@@ -36,11 +38,32 @@ class OverviewController extends Controller
      *
      * @throws \InvalidArgumentException
      */
-    public function index(Request $request): Response
+    public function indexAction(Request $request): Response
     {
         $data = $this->parser->parse($request);
         return $this->render('overview/index.html.twig', [
             'data' => $data,
         ]);
+    }
+
+    /**
+     * @Route("/{team}", name="overview_team")
+     *
+     * @param FindTeamMatchesParser $matchesParser
+     * @param Request $request
+     * @param $team
+     *
+     * @return Response
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function teamAction(FindTeamMatchesParser $matchesParser, Request $request, $team): Response
+    {
+        $data = $this->parser->parse($request);
+        $teamMatches = $matchesParser->parse((int)$team, $data);
+        $view = $this->renderView('overview/team.html.twig', [
+            'data' => $teamMatches,
+        ]);
+        return new JsonResponse($view);
     }
 }

@@ -1,0 +1,24 @@
+{% for teammatch in data %}
+    <div class="card">
+        <div class="card-header">
+            {% if teammatch.type.finished is defined %}
+                {{ 'Group %name%'|trans({'%name%': teammatch.type.name|upper}) }}
+            {% else %}
+                {{ teammatch.type.name }}
+            {% endif %}
+        </div>
+        {% if teammatch.type.finished is defined %}
+            <table class="table-groupmatches">
+                <tbody>
+                {%- include 'overview/match/index.html.twig' with {match: teammatch.match, type: 'groupmatches'} only -%}
+                </tbody>
+            </table>
+        {% else %}
+            <table class="table table-vsm table-knockoutmatches">
+                <tbody>
+                {% include 'overview/match/index.html.twig' with {type: 'knockoutmatches', match: teammatch.match} %}
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
+{% endfor %}

@@ -16,7 +16,10 @@
         {%- include '_partial/teamname.html.twig' with {team: match.hometeam} only -%}
         <label class="table-{{ type }}--label"><input name="m{{ match.id }}h" type="text" class="table-{{ type }}--result" value="{{ match.homeresult }}"></label>
     </td>
-    <td class="table-{{ type }}--spacer text-center" title="{{ match.stadium.name }}"><small>{{ 'Match %id%'|trans({'%id%': match.id}) }}</small></td>
+    <td class="table-{{ type }}--spacer text-center" title="{{ match.stadium.name }}">
+        <small class="hidden-xs-down">{{ 'Match %id%'|trans({'%id%': match.id}) }}</small>
+        <small class="hidden-sm-up">{{ match.id }}</small>
+    </td>
     <td class="{{ awayclass|default('') }} table-{{ type }}--awayteam">
         <label class="table-{{ type }}--label"><input name="m{{ match.id }}a" type="text" class="table-{{ type }}--result" value="{{ match.awayresult }}"></label>
         {%- include '_partial/teamname.html.twig' with {team: match.awayteam} only -%}

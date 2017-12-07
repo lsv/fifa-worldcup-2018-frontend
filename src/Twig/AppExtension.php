@@ -17,14 +17,47 @@ class AppExtension extends AbstractExtension
      */
     private $translator;
 
-    public function __construct(TranslatorInterface $translator)
+    /**
+     * @var string
+     */
+    private $languages;
+
+    /**
+     * @var string
+     */
+    private $defaultLanguage;
+
+    /**
+     * @param TranslatorInterface $translator
+     * @param string $languages
+     * @param string $defaultLanguage
+     */
+    public function __construct(TranslatorInterface $translator, $languages, $defaultLanguage)
     {
         $this->translator = $translator;
+        $this->languages = $languages;
+        $this->defaultLanguage = $defaultLanguage;
     }
 
     public function getFunctions(): array
     {
         return [
+            new TwigFunction('selectedlanguage', function(Request $request) {
+                $params = $request->isMethod('POST') ? $request->request : $request->query;
+                if ($params->has('lang')) {
+                    return $params->get('lang');
+                }
+
+                return $this->defaultLanguage;
+            }),
+            new TwigFunction('languages', function($locale) {
+                $output = [];
+                foreach (explode('|', $this->languages) as $language) {
+                    var_dump($language);
+                    $output[$language] = Intl::getLocaleBundle()->getLocaleName($language, $locale);
+                }
+                return $output;
+            }),
             new TwigFunction('selectedtimezone', function(Request $request) {
                 $params = $request->isMethod('POST') ? $request->request : $request->query;
                 if ($params->has('tz')) {

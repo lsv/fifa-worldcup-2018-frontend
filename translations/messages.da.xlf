@@ -113,9 +113,25 @@
         <source>Update your matches, with your results</source>
         <target>Opdater resultater på kampene</target>
       </trans-unit>
-      <trans-unit id="england" resname="England">
+      <trans-unit id="wOqWCwZ" resname="England">
         <source>England</source>
         <target>England</target>
+      </trans-unit>
+      <trans-unit id="pP5lJk7" resname="Language">
+        <source>Language</source>
+        <target>Sprog</target>
+      </trans-unit>
+      <trans-unit id="bsMz.Ee" resname="Opdater">
+        <source>Update</source>
+        <target>Opdater</target>
+      </trans-unit>
+      <trans-unit id="0z1KtHm" resname="Wins - Draws - Lost">
+        <source>Wins - Draws - Lost</source>
+        <target>Vundet - Uafgjorte - Tabte</target>
+      </trans-unit>
+      <trans-unit id="1iW8F2I" resname="W-D-L">
+        <source>W-D-L</source>
+        <target>V-U-T</target>
       </trans-unit>
     </body>
   </file>

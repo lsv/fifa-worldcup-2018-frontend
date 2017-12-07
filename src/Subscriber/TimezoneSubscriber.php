@@ -20,6 +20,9 @@ class TimezoneSubscriber implements EventSubscriberInterface
         if ($params->has('tz')) {
             date_default_timezone_set($params->get('tz'));
         }
+        if ($params->has('lang')) {
+            $event->getRequest()->setLocale($params->get('lang'));
+        }
     }
 
     /**
@@ -30,7 +33,7 @@ class TimezoneSubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents(): array
     {
         return [
-            KernelEvents::REQUEST => 'onKernelRequest',
+            KernelEvents::REQUEST => [['onKernelRequest', 15]],
         ];
     }
 }

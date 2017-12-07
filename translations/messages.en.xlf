@@ -113,9 +113,25 @@
         <source>Update your matches, with your results</source>
         <target>Update your matches, with your results</target>
       </trans-unit>
-      <trans-unit id="england" resname="England">
+      <trans-unit id="wOqWCwZ" resname="England">
         <source>England</source>
         <target>England</target>
+      </trans-unit>
+      <trans-unit id="pP5lJk7" resname="Language">
+        <source>Language</source>
+        <target>Language</target>
+      </trans-unit>
+      <trans-unit id="bsMz.Ee" resname="Opdater">
+        <source>Update</source>
+        <target>Update</target>
+      </trans-unit>
+      <trans-unit id="0z1KtHm" resname="Wins - Draws - Lost">
+        <source>Wins - Draws - Lost</source>
+        <target>Wins - Draws - Lost</target>
+      </trans-unit>
+      <trans-unit id="1iW8F2I" resname="W-D-L">
+        <source>W-D-L</source>
+        <target>W-D-L</target>
       </trans-unit>
     </body>
   </file>
