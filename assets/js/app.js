@@ -1,5 +1,4 @@
 import moment from 'moment';
-import 'bootstrap/js/src/modal';
 
 moment.relativeTimeThreshold('m', 60);
 moment.relativeTimeThreshold('d', 3000);
@@ -20,14 +19,24 @@ jQuery('.teammatches').click(function() {
     let teamid = team.data('id');
     let $modal = $('#teammatchesModal');
     $.get('/' + teamid, function(data) {
-        console.log('data', data);
         $modal.find('.modal-title').html(team.html());
         $modal.find('.modal-body').html(data);
         $modal.find('.moment-date').each(function() {
             let $this = $(this);
             $this.html(moment($this.data('date')).fromNow());
         });
-        $modal.modal('show');
+
+        const modal = document.getElementById('teammatchesModal');
+        const closebtn = document.getElementsByClassName("close")[0];
+        modal.style.display = "block";
+        closebtn.onclick = function() {
+            modal.style.display = "none";
+        };
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
     });
 });
 
